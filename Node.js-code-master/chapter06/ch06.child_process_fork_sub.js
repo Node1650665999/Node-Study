@@ -5,14 +5,17 @@
  */
 console.info("------   child_process fork sub   ------");
 console.info();
-/**
- * process on message
- */
-process.on('message', function(m) {
-    console.log('CHILD got message:', m);
-});
-/**
- * process send message
- */
-process.send({ sub: 'main' });    // TODO: send message
+
+        /**
+         * process on message
+         */
+        process.on('message', function(m) {
+            console.log('CHILD got message:', m);
+        });
+        /**
+         * process send message
+         */
+        process.send({ sub: 'main' });    // TODO: send message
+
+
 console.info();

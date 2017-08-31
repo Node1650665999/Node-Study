@@ -6,7 +6,7 @@
 console.info("------   child_process spawn ls   ------");
 console.info();
 var spawn = require('child_process').spawn; // TODO: 引入child_process模块
-var ls_var = spawn('ls', ['-lh', '/usr']);  // TODO: 定义命令行‘ls -lh /usr’
+var ls_var = spawn('ls', ['-lh', __dirname]);  // TODO: 定义命令行‘ls -lh /usr’
 /**
  * 捕获控制台输出对象stdout,输出捕获数据
  */

@@ -1,13 +1,10 @@
-process.on('SIGTERM', function(){
-    console.log('terminating');
-    process.exit(1);
+process.on('uncaughtException', function(err) {
+    console.log('Caught exception: ' + err);
 });
 
-setTimeout(function(){
-    console.log('sending SIGTERM to process %d', process.pid);
-    process.kill(process.pid, 'SIGTERM');
+setTimeout(function() {
+    console.log('本行依然执行');
 }, 500);
 
-setTimeout(function(){
-    console.log('never called');
-}, 1000);
+// 下面的表达式抛出错误
+nonexistentFunc();
